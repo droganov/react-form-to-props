@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/droganov/react-form-to-props.git"
+  },
   "author": "Serge Droganov",
   "license": "MIT",
   "dependencies": {
