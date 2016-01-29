@@ -10,6 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/droganov/react-form-to-props.git"
   },
+  "keywords": [
+    "react",
+    "form",
+    "bind",
+    "link",
+    "props"
+  ],
   "author": "Serge Droganov",
   "license": "MIT",
   "dependencies": {
