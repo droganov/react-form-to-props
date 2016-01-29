@@ -18,7 +18,7 @@ class Form extends Component {
     return ( ... );
   }
 }
-export default connectForm( AuthLogin );
+export default connectForm( Form );
 ```
 
 Bind props
@@ -51,5 +51,5 @@ class Form extends Component {
     </form>;
   }
 }
-export default connectForm( AuthLogin );
+export default connectForm( Form );
 ```
