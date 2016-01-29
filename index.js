@@ -1,5 +1,5 @@
 "use strict"
-import React from "react";
+var React = require( "react" );
 
 module.exports = function( Component ){
   return React.createClass({
