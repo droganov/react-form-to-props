@@ -1,0 +1,25 @@
+{
+  "name": "react-form-to-props",
+  "version": "0.0.2",
+  "description": "react form binding helper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/droganov/react-form-to-props.git"
+  },
+  "keywords": [
+    "react",
+    "form",
+    "bind",
+    "link",
+    "props"
+  ],
+  "author": "Serge Droganov",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^0.14.7"
+  }
+}
