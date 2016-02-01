@@ -6,7 +6,7 @@ module.exports = function( Component ){
     displayName: Component.displayName || Component.name || "FormComponent",
     statics: Component.statics,
     bindAs: function( fieldName, formName ){
-      var ctx = this;
+      var ctx = this.refs.form;
       var formName = formName || "form";
       return {
         value: ctx.state && formName in ctx.state && fieldName in ctx.state[ formName ] ? ctx.state[ formName ][ fieldName ] : "",
@@ -20,7 +20,7 @@ module.exports = function( Component ){
       }
     },
     render: function() {
-      return React.createElement( Component, Object.assign( {}, this.props, this.state, { bindAs: this.bindAs } ) );
+      return React.createElement( Component, Object.assign( { ref: "form" }, this.props, this.state, { bindAs: this.bindAs } ) );
     },
   });
 }
