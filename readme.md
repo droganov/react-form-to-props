@@ -38,6 +38,7 @@ class Form extends Component {
   _submit( ev ){
     ev.preventDefault()
     console.log( this.props.loginForm );
+    this.props.resetForm( "loginForm" );
   }
   render(){
     return <form onSubmit={ this._submit.bind( this ) }>
@@ -52,4 +53,9 @@ class Form extends Component {
   }
 }
 export default connectForm( Form );
+```
+
+To reset a form:
+```javascript
+this.props.resetForm();
 ```
