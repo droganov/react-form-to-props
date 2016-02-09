@@ -16,11 +16,34 @@ module.exports = function( Component ){
   return React.createClass({
     displayName: Component.displayName || Component.name || "FormComponent",
     statics: Component.statics,
+
+    getInitialState: function(){
+      return {
+        trimForm: this.trim,
+      }
+    },
+
+    trim: function( formName ){
+      var formName = getFormName( formName );
+      var form = this.state && this.state[ formName ] || false;
+      if( !form ) return;
+      for( var fieldName in form ){
+        if( form.hasOwnProperty( fieldName ) ) form[ fieldName ] = form[ fieldName ].trim();
+      }
+      var newState = {};
+      newState[ formName ] = form;
+
+      this.setState( newState );
+    },
+
+
     bindAs: function( fieldName, formName ){
       var ctx = this;
       var formName = getFormName( formName );
+      var formContainer = ctx.props && ctx.props[ formName ] || ctx.state && ctx.state[ formName ] || {};
+
       return {
-        value: ctx.state && formName in ctx.state && fieldName in ctx.state[ formName ] ? ctx.state[ formName ][ fieldName ] : "",
+        value: formContainer[ fieldName ] || "",
         requestChange: function( newValue ) {
           var newState = Object.assign( getEmptyState( formName ), ctx.state );
           newState[ formName ][ fieldName ] = newValue;

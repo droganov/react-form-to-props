@@ -37,6 +37,7 @@ import connectForm from "react-form-to-props"
 class Form extends Component {
   _submit( ev ){
     ev.preventDefault()
+    this.props.trimForm( "loginForm" );
     console.log( this.props.loginForm );
     this.props.resetForm( "loginForm" );
   }
